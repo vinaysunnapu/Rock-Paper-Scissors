@@ -1,0 +1,53 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.rules-image {
+  width: 450px;
+  height: 400px;
+}
+.pop-up-container {
+  width: 500px;
+  height: 500px;
+  background-color: #ffffff;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.close-button {
+  width: 30px;
+  height: 30px;
+  align-self: flex-start;
+}
+.trigger-button {
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  font-family: roboto;
+  font-weight: bold;
+}
+.your-image {
+  width: 150px;
+  height: 150px;
+}
+.result-image-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.play-again-button {
+  border: none;
+  padding: 10px;
+  font-weight: bold;
+  border-radius: 8px;
+}
