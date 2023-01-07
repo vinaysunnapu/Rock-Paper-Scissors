@@ -30,7 +30,7 @@ export const ScoreText = styled.div`
   justify-content: center;
 `
 export const Para = styled.p`
-  font-family: Bree Serif;
+  font-family: 'roboto';
   font-size: 15px;
   color: #ffffff;
   font-weight: bold;
@@ -45,7 +45,7 @@ export const ScoreValueContainer = styled.div`
   border-radius: 8px;
 `
 export const ScorePara = styled.p`
-  font-family: 'roboto';
+  font-family: Roboto;
   font-size: 20px;
   color: #223a5f;
   font-weight: bold;
@@ -78,4 +78,13 @@ export const Heading = styled.h1`
   font-weight: bold;
   color: #ffffff;
   width: 100px;
+`
+
+export const ImageElement = styled.img`
+  width: 150px;
+  height: 150px;
+`
+export const Button = styled.button`
+  background-color: transparent;
+  border: none;
 `

@@ -4,8 +4,6 @@ import Popup from 'reactjs-popup'
 
 import {RiCloseLine} from 'react-icons/ri'
 
-import PlayingView from './components/PlayingView'
-
 import {
   MainBgContainer,
   GameContainer,
@@ -18,6 +16,8 @@ import {
   UnListContainer,
   ResultContainer,
   Heading,
+  ImageElement,
+  Button,
 } from './StyledComponents'
 
 import './App.css'
@@ -27,19 +27,16 @@ const choicesList = [
     id: 'ROCK',
     imageUrl:
       'https://assets.ccbp.in/frontend/react-js/rock-paper-scissor/rock-image.png',
-    alt: 'rockButton',
   },
   {
     id: 'SCISSORS',
     imageUrl:
       'https://assets.ccbp.in/frontend/react-js/rock-paper-scissor/scissor-image.png',
-    alt: 'scissorsButton',
   },
   {
     id: 'PAPER',
     imageUrl:
       'https://assets.ccbp.in/frontend/react-js/rock-paper-scissor/paper-image.png',
-    alt: 'paperButton',
   },
 ]
 
@@ -100,6 +97,27 @@ class App extends Component {
     this.getRandomImage()
   }
 
+  onClickChoiceRock = () => {
+    const Id = choicesList[0].id
+    const image = choicesList[0].imageUrl
+
+    this.clickGameId(Id, image)
+  }
+
+  onClickChoiceScissors = () => {
+    const Id = choicesList[1].id
+    const image = choicesList[1].imageUrl
+
+    this.clickGameId(Id, image)
+  }
+
+  onClickChoicePaper = () => {
+    const Id = choicesList[2].id
+    const image = choicesList[2].imageUrl
+
+    this.clickGameId(Id, image)
+  }
+
   renderGameResultView = () => {
     const {yourImage, oppImage, resultText} = this.state
     return (
@@ -130,13 +148,27 @@ class App extends Component {
 
   renderPlayingView = () => (
     <UnListContainer>
-      {choicesList.map(eachList => (
-        <PlayingView
-          eachItem={eachList}
-          key={eachList.id}
-          clickGameId={this.clickGameId}
-        />
-      ))}
+      <Button
+        type="button"
+        data-testid="rockButton"
+        onClick={this.onClickChoiceRock}
+      >
+        <ImageElement src={choicesList[0].imageUrl} alt={choicesList[0].id} />
+      </Button>
+      <Button
+        type="button"
+        data-testid="scissorsButton"
+        onClick={this.onClickChoiceScissors}
+      >
+        <ImageElement src={choicesList[1].imageUrl} alt={choicesList[1].id} />
+      </Button>
+      <Button
+        type="button"
+        data-testid="paperButton"
+        onClick={this.onClickChoicePaper}
+      >
+        <ImageElement src={choicesList[2].imageUrl} alt={choicesList[2].id} />
+      </Button>
     </UnListContainer>
   )
 
